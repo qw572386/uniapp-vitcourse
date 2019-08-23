@@ -1,0 +1,60 @@
+.content{
+	background: #f7f7f7;
+	position: relative;
+	.top-bar{
+		background: transparent;
+		border: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20upx;
+		.searchbar{
+			flex-grow: 1;
+			position: relative;
+			&-input{
+				background: #c0c0c0;
+				padding: 8upx 70upx 8upx 30upx;
+				border-radius: 30px;
+				height: 50upx;
+			}
+			.search{
+				position: absolute;
+				right: 10upx;
+				top: 8upx;
+				width: 50upx;
+				height: 50upx;
+				font-size: 50upx;
+			}
+		}
+		.cart{
+			margin-left: 20upx;
+			font-size: 50upx;
+		}
+	}
+	.carousel{
+		position: relative;
+		padding-top: 20upx;
+		background: #FFFFFF;
+		&-background{
+			position: absolute;
+			opacity: .85;
+			top: 0;
+			left: 0;
+			height: 100upx;
+			width: 100%;
+			filter: blur(75upx);
+		}
+		&-content{
+			position: relative;
+			left: 5%;
+			width: 90%;
+			border-radius: 20upx;
+			overflow: hidden;
+			height: 300upx;
+			&-item,.image-item{
+				height: 300upx;
+				width: 100%;
+			}
+		}
+	}
+}
