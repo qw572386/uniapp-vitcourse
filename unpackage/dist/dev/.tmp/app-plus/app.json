@@ -12,18 +12,26 @@
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FA436A",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "static/images/tabbar/tab-home.png",
+        "selectedIconPath": "static/images/tabbar/tab-home-current.png"
       },
       {
         "pagePath": "pages/category/category",
-        "text": "分类"
+        "text": "分类",
+        "iconPath": "static/images/tabbar/tab-cate.png",
+        "selectedIconPath": "static/images/tabbar/tab-cate-current.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "static/images/tabbar/tab-my.png",
+        "selectedIconPath": "static/images/tabbar/tab-my-current.png"
       }
     ]
   },

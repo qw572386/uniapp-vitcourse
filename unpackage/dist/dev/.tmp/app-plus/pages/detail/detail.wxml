@@ -1,1 +1,1 @@
-<view></view>
+<view>{{'详情页，ID为：'+id+''}}</view>

@@ -2,7 +2,7 @@
 	<view class="content">
 		<view class="top-bar">
 			<view class="searchbar">
-				<input type="text" value="" class="searchbar-input" confirm-type="search" placeholder="请输入搜索内容" placeholder-style="color:#f5f5f5;font-size: 30upx" />
+				<input type="text" value="" class="searchbar-input" confirm-type="search" placeholder="请输入搜索内容" placeholder-style="color:#c0c0c0;font-size: 30upx" />
 				<view class="icon search"></view>
 			</view>
 			<view class="icon cart"></view>
