@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "首页",
-  "usingComponents": {}
+  "usingComponents": {
+    "floor-title": "/components/floorTitle",
+    "lesson-item": "/components/lessonItem"
+  }
 }

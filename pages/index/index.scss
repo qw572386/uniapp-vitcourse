@@ -67,7 +67,51 @@
 			&-item,.image-item{
 				height: 300upx;
 				width: 100%;
+				border-radius: 20upx;
+				overflow: hidden;
 			}
+		}
+	}
+	.floor-content{
+		padding: 10upx 0;
+		&:nth-child(2n + 1){
+			background: #FFFFFF;
+		}
+		.scroll-view-content{
+			white-space: nowrap;
+			box-sizing: border-box;
+			&.tags-content{
+				.tags-content-item{
+					display: inline-block;
+					padding: 10upx 20upx;
+					box-sizing: border-box;
+					background: #3F536E;
+					border-radius: 10upx;
+					margin: 10upx 10upx 20upx;
+					color: #FFFFFF;
+					font-size: .75rem;
+				}
+			}
+			.good-lessons-content{
+				padding: 10upx;
+				width: 1050upx;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+			.basic-lessons-content{
+				display: flex;
+				justify-content: space-around;
+				box-sizing: border-box;
+				width: fit-content;
+			}
+		}
+		.new-lessons-content{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 20upx;
+			box-sizing: border-box;
 		}
 	}
 }

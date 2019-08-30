@@ -9,11 +9,14 @@
 "use strict";
 /* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ 4);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 5));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 5));
+var _request = _interopRequireDefault(__webpack_require__(/*! ./utils/request.js */ 11));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 _vue.default.config.productionTip = false;
 
 _App.default.mpType = 'app';
+
+_vue.default.use(_request.default);
 
 var app = new _vue.default(_objectSpread({},
 _App.default));
@@ -753,7 +756,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -6965,7 +6968,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -6986,14 +6989,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7069,7 +7072,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7598,6 +7601,317 @@ function normalizeComponent (
 
 /***/ }),
 /* 11 */
+/*!**************************************************!*\
+  !*** E:/HBuilderProjects/youke/utils/request.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var config = _interopRequireWildcard(__webpack_require__(/*! ../config/config.js */ 12));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}var
+baseUrl = config.default.baseUrl;
+var defaultParamter = {
+  header: undefined, dataType: 'json', responseType: undefined };
+
+var request = {
+  post: function post(path) {var payload = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var customParamter = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};var _Object$assign =
+    Object.assign(defaultParamter, customParamter),header = _Object$assign.header,dataType = _Object$assign.dataType,responseType = _Object$assign.responseType;
+    return new Promise(function (resolve, reject) {
+      uni.request({
+        url: baseUrl + path,
+        method: 'POST',
+        data: payload,
+        header: header,
+        dataType: dataType,
+        responseType: responseType,
+        success: function success(res) {
+          if (res && res.statusCode === 200) {
+            resolve(res);
+          } else {
+            var errMsg = translateCodeToString(res.statusCode);
+            reject(new Error(errMsg));
+          }
+        },
+        fail: function fail(err) {
+          reject(err);
+        } });
+
+    });
+
+  },
+  get: function get(path) {var payload = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var customParamter = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};var _Object$assign2 =
+    Object.assign(defaultParamter, customParamter),header = _Object$assign2.header,dataType = _Object$assign2.dataType,responseType = _Object$assign2.responseType;
+    return new Promise(function (resolve, reject) {
+      uni.request({
+        url: baseUrl + path,
+        method: 'GET',
+        data: payload,
+        header: header,
+        dataType: dataType,
+        responseType: responseType,
+        success: function success(res) {
+          if (res && res.statusCode === 200) {
+            resolve(res);
+          } else {
+            var errMsg = translateCodeToString(res.statusCode);
+            reject(new Error(errMsg));
+          }
+        },
+        fail: function fail(err) {
+          reject(err);
+        } });
+
+    });
+
+  } };
+
+/**
+       * 转译状态码错误信息
+       * @param {Number} code 需要进行转译的错误状态码
+       */
+var translateCodeToString = function translateCodeToString(code) {
+  var res = '请求异常';
+  if (code === '' || code === undefined) {
+    return res;
+  }
+  switch (code) {
+    case 0:
+      {
+        res = '服务访问异常';
+        break;
+      }
+    case 100:
+      {
+        res = '客户必须继续发出请求';
+        break;
+      }
+    case 101:
+      {
+        res = '客户要求服务器根据请求转换HTTP协议版本';
+        break;
+      }
+    case 200:
+      {
+        res = '请求成功';
+        break;
+      }
+    case 201:
+      {
+        res = '提示知道新文件的URL';
+        break;
+      }
+    case 202:
+      {
+        res = '接受和处理、但处理未完成';
+        break;
+      }
+    case 203:
+      {
+        res = '返回信息不确定或不完整';
+        break;
+      }
+    case 204:
+      {
+        res = '请求收到，但返回信息为空';
+        break;
+      }
+    case 205:
+      {
+        res = '服务器完成了请求，用户代理必须复位当前已经浏览过的文件';
+        break;
+      }
+    case 206:
+      {
+        res = '服务器已经完成了部分用户的GET请求';
+        break;
+      }
+    case 300:
+      {
+        res = '请求的资源可在多处得到';
+        break;
+      }
+    case 301:
+      {
+        res = '删除请求数据';
+        break;
+      }
+    case 302:
+      {
+        res = '在其他地址发现了请求数据';
+        break;
+      }
+    case 303:
+      {
+        res = '建议客户访问其他URL或访问方式';
+        break;
+      }
+    case 304:
+      {
+        res = '客户端已经执行了GET，但文件未变化';
+        break;
+      }
+    case 305:
+      {
+        res = '请求的资源必须从服务器指定的地址得到';
+        break;
+      }
+    case 306:
+      {
+        res = '前一版本HTTP中使用的代码，现行版本中不再使用';
+        break;
+      }
+    case 307:
+      {
+        res = '申明请求的资源临时性删除';
+        break;
+      }
+    case 400:
+      {
+        res = '错误请求，如语法错误';
+        break;
+      }
+    case 401:
+      {
+        res = '请求授权失败';
+        break;
+      }
+    case 402:
+      {
+        res = '保留有效ChargeTo头响应';
+        break;
+      }
+    case 403:
+      {
+        res = '请求不允许';
+        break;
+      }
+    case 404:
+      {
+        res = '请求资源不存在';
+        break;
+      }
+    case 405:
+      {
+        res = '用户在Request-Line字段定义的方法不允许';
+        break;
+      }
+    case 406:
+      {
+        res = '根据用户发送的Accept拖，请求资源不可访问';
+        break;
+      }
+    case 407:
+      {
+        res = '用户必须首先在代理服务器上得到授权';
+        break;
+      }
+    case 408:
+      {
+        res = '客户端没有在用户指定的饿时间内完成请求';
+        break;
+      }
+    case 409:
+      {
+        res = '对当前资源状态，请求不能完成';
+        break;
+      }
+    case 410:
+      {
+        res = '服务器上不再有此资源且无进一步的参考地址';
+        break;
+      }
+    case 411:
+      {
+        res = '服务器拒绝用户定义的Content-Length属性请求';
+        break;
+      }
+    case 412:
+      {
+        res = '一个或多个请求头字段在当前请求中错误';
+        break;
+      }
+    case 413:
+      {
+        res = '请求的资源大于服务器允许的大小';
+        break;
+      }
+    case 414:
+      {
+        res = '请求的资源URL长于服务器允许的长度';
+        break;
+      }
+    case 415:
+      {
+        res = '请求资源不支持请求项目格式';
+        break;
+      }
+    case 416:
+      {
+        res = '请求中包含Range请求头字段，在当前请求资源范围内没有range指示值，请求';
+        break;
+      }
+    case 417:
+      {
+        res = '服务器不满足请求Expect头字段指定的期望值，如果是代理服务器，可能是下一级服务器不能满足请求';
+        break;
+      }
+    case 500:
+      {
+        res = '服务器配置有误';
+        break;
+      }
+    case 501:
+      {
+        res = '服务器不支持请求的函数';
+        break;
+      }
+    case 502:
+      {
+        res = '服务器暂时不可用，有时是为了防止发生系统过载';
+        break;
+      }
+    case 503:
+      {
+        res = '服务器过载或暂停维修';
+        break;
+      }
+    case 504:
+      {
+        res = '关口过载，服务器使用另一个关口或服务来响应用户，等待时间设定值较长';
+        break;
+      }
+    case 505:
+      {
+        res = '服务器不支持或拒绝支请求头中指定的HTTP版本';
+        break;
+      }
+    default:
+      res = 'http请求失败，请检查服务器接口内部错误.';
+      break;}
+
+  return res;
+};
+var install = function install(Vue) {
+  Vue.prototype.$post = request.post;
+  Vue.prototype.$get = request.get;
+};var _default =
+install;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 12 */
+/*!**************************************************!*\
+  !*** E:/HBuilderProjects/youke/config/config.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  baseUrl: 'https://www.easy-mock.com/mock/5d2fcb7ea8d0b97fdc2d2b69' };exports.default = _default;
+
+/***/ }),
+/* 13 */
 /*!**************************************************************************!*\
   !*** E:/HBuilderProjects/youke/main.js?{"page":"pages%2Findex%2Findex"} ***!
   \**************************************************************************/
@@ -7608,19 +7922,19 @@ function normalizeComponent (
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ 12));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ 14));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_index.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
-/* 12 */,
-/* 13 */,
 /* 14 */,
 /* 15 */,
 /* 16 */,
 /* 17 */,
 /* 18 */,
-/* 19 */
+/* 19 */,
+/* 20 */,
+/* 21 */
 /*!********************************************************************************!*\
   !*** E:/HBuilderProjects/youke/main.js?{"page":"pages%2Fcategory%2Fcategory"} ***!
   \********************************************************************************/
@@ -7631,17 +7945,17 @@ createPage(_index.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _category = _interopRequireDefault(__webpack_require__(/*! ./pages/category/category.vue */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _category = _interopRequireDefault(__webpack_require__(/*! ./pages/category/category.vue */ 22));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_category.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
-/* 20 */,
-/* 21 */,
 /* 22 */,
 /* 23 */,
 /* 24 */,
-/* 25 */
+/* 25 */,
+/* 26 */,
+/* 27 */
 /*!********************************************************************!*\
   !*** E:/HBuilderProjects/youke/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
   \********************************************************************/
@@ -7652,17 +7966,17 @@ createPage(_category.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _my = _interopRequireDefault(__webpack_require__(/*! ./pages/my/my.vue */ 26));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _my = _interopRequireDefault(__webpack_require__(/*! ./pages/my/my.vue */ 28));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_my.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
-/* 26 */,
-/* 27 */,
 /* 28 */,
 /* 29 */,
 /* 30 */,
-/* 31 */
+/* 31 */,
+/* 32 */,
+/* 33 */
 /*!****************************************************************************!*\
   !*** E:/HBuilderProjects/youke/main.js?{"page":"pages%2Fdetail%2Fdetail"} ***!
   \****************************************************************************/
@@ -7673,7 +7987,7 @@ createPage(_my.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _detail = _interopRequireDefault(__webpack_require__(/*! ./pages/detail/detail.vue */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _detail = _interopRequireDefault(__webpack_require__(/*! ./pages/detail/detail.vue */ 34));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_detail.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 

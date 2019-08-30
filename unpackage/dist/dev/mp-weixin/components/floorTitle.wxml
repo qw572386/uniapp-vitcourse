@@ -1,0 +1,1 @@
+<view class="floor-title"><view class="floor-title-left">{{''+title+''}}</view><view data-event-opts="{{[['tap',[['handleShowMore',['$event']]]]]}}" class="floor-title-right" bindtap="__e"><text>更多</text><view class="icon more"></view></view></view>

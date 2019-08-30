@@ -1,0 +1,26 @@
+{
+	"code": 0,
+	"msg": "成功",
+	"data": [
+		{
+			"id": "10001",
+			"src": "/static/images/carousel/10001.jpg"
+		},
+		{
+			"id": "10002",
+			"src": "/static/images/carousel/10002.jpg"
+		},
+		{
+			"id": "10003",
+			"src": "/static/images/carousel/10003.jpg"
+		},
+		{
+			"id": "10004",
+			"src": "/static/images/carousel/10004.jpg"
+		},
+		{
+			"id": "10005",
+			"src": "/static/images/carousel/10005.jpg"
+		}
+	]
+}

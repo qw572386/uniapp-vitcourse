@@ -104,5 +104,75 @@
 .content .carousel-content-item, .content .carousel-content .image-item {
         height: 300rpx;
         width: 100%;
+        border-radius: 20rpx;
+        overflow: hidden;
+}
+.content .floor-content {
+    padding: 10rpx 0;
+}
+.content .floor-content:nth-child(2n + 1) {
+      background: #FFFFFF;
+}
+.content .floor-content .scroll-view-content {
+      white-space: nowrap;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+}
+.content .floor-content .scroll-view-content.tags-content .tags-content-item {
+        display: inline-block;
+        padding: 10rpx 20rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        background: #3F536E;
+        border-radius: 10rpx;
+        margin: 10rpx 10rpx 20rpx;
+        color: #FFFFFF;
+        font-size: .75rem;
+}
+.content .floor-content .scroll-view-content .good-lessons-content {
+        padding: 10rpx;
+        width: 1050rpx;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+}
+.content .floor-content .scroll-view-content .basic-lessons-content {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-justify-content: space-around;
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+}
+.content .floor-content .new-lessons-content {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      padding: 20rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
 }
 
