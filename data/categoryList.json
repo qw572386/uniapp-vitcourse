@@ -1,0 +1,244 @@
+{
+  "code": 0,
+  "msg": "成功",
+  "data": {
+    "banner": [{
+        "Imgid": 10,
+        "src": "http://dummyimage.com/530x180"
+      },
+      {
+        "Imgid": 11,
+        "src": "http://dummyimage.com/530x180"
+      },
+      {
+        "Imgid": 12,
+        "src": "http://dummyimage.com/530x180"
+      }
+    ],
+    "list": [{
+        "id": 0,
+        "name": "Web前端",
+        "content": [{
+            "cid": 0,
+            "cname": "HTML5",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 1,
+            "cname": "Web",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 2,
+            "cname": "NodeJs",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 3,
+            "cname": "Javascript",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 4,
+            "cname": "JQuery",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 5,
+            "cname": "Bootstrap",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 6,
+            "cname": "React",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 7,
+            "cname": "Vuejs",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 8,
+            "cname": "CSS",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 9,
+            "cname": "AngularJs",
+            "thumb": "http://dummyimage.com/100x100"
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "name": "后端开发",
+        "content": [
+          {
+            "cid": 10,
+            "cname": "Python",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 11,
+            "cname": "PHP",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 12,
+            "cname": "Java",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 13,
+            "cname": "Ruby",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 14,
+            "cname": "Laravel",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 15,
+            "cname": "C",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 16,
+            "cname": "C++",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+		  {
+            "cid": 17,
+            "cname": "NodeJs",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 18,
+            "cname": "GO",
+            "thumb": "http://dummyimage.com/100x100"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Linux运维",
+        "content": [
+		  {
+			"cid": 19,
+			"cname": "Linux",
+			"thumb": "http://dummyimage.com/100x100"
+		  },
+          {
+            "cid": 20,
+            "cname": "Shell",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 21,
+            "cname": "网络",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 22,
+            "cname": "Nginx",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 23,
+            "cname": "Asible",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 24,
+            "cname": "Git",
+            "thumb": "http://dummyimage.com/100x100"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "数据库",
+        "content": [
+          {
+            "cid": 25,
+            "cname": "SQL",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 26,
+            "cname": "NoSQL",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 27,
+            "cname": "MongoDB",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 28,
+            "cname": "MySql",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 29,
+            "cname": "Redis",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 30,
+            "cname": "Oracle",
+            "thumb": "http://dummyimage.com/100x100"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "云计算大数据",
+        "content": [
+          {
+            "cid": 31,
+            "cname": "Hadoop",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 32,
+            "cname": "Spark",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 33,
+            "cname": "Scala",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 34,
+            "cname": "Docker",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 35,
+            "cname": "HBase",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 36,
+            "cname": "KafKa",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 37,
+            "cname": "Mahout",
+            "thumb": "http://dummyimage.com/100x100"
+          },
+          {
+            "cid": 38,
+            "cname": "Hive",
+            "thumb": "http://dummyimage.com/100x100"
+          }
+        ]
+      }
+    ]
+  }
+}
