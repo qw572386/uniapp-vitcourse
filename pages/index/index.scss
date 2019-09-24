@@ -38,37 +38,67 @@
 			font-size: 50upx;
 		}
 	}
-	.carousel{
-		position: relative;
+	.swiper {
+		width: 100%;
 		padding-top: 100upx;
 		/* #ifdef APP-PLUS */
 		padding-top: 140upx;
 		/* #endif */
-		background: #FFFFFF;
+		display: flex;
+		justify-content: center;
 		&-background{
 			position: absolute;
 			opacity: .85;
 			top: 0;
 			left: 0;
-			height: 100upx;
-			/* #ifdef APP-PLUS */
-			height: 140upx;
-			/* #endif */
+			height: 200upx;
 			width: 100%;
-			filter: blur(100upx);
+			filter: blur(60upx);
+			background-origin: content-box;
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
-		&-content{
-			position: relative;
-			left: 2%;
-			width: 96%;
-			border-radius: 20upx;
+		&-box {
+			width: 92%;
+			height: 30.7vw;
+	
 			overflow: hidden;
-			height: 300upx;
-			&-item,.image-item{
-				height: 300upx;
+			border-radius: 15upx;
+			box-shadow: 0upx 8upx 25upx rgba(0, 0, 0, 0.2);
+			//兼容ios，微信小程序
+			position: relative;
+			z-index: 1;
+			swiper {
 				width: 100%;
-				border-radius: 20upx;
+				height: 30.7vw;
+				swiper-item {
+					image {
+						width: 100%;
+						height: 30.7vw;
+					}
+				}
+			}
+			.indicator {
+				position: absolute;
+				bottom: 20upx;
+				left: 20upx;
+				background-color: rgba(255, 255, 255, 0.4);
+				width: 150upx;
+				height: 5upx;
+				border-radius: 3upx;
 				overflow: hidden;
+				display: flex;
+				.dots {
+					opacity: 0;
+					transform: translate(-100%, 0) translateZ(0px);
+					flex: 1;
+					background-color: rgba(255, 255, 255, 1);
+					transition: all 0.5s ease-out;
+					&.on {
+						opacity: 1;
+						transform: translate(0, 0) translateZ(0px);
+					}
+				}
 			}
 		}
 	}

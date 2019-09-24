@@ -21,52 +21,52 @@
         "content": [{
             "cid": 0,
             "cname": "HTML5",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/html.png"
           },
           {
             "cid": 1,
             "cname": "Web",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/web.png"
           },
           {
             "cid": 2,
             "cname": "NodeJs",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/nodejs.png"
           },
           {
             "cid": 3,
             "cname": "Javascript",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/js.png"
           },
           {
             "cid": 4,
             "cname": "JQuery",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/jquery.png"
           },
           {
             "cid": 5,
             "cname": "Bootstrap",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/bootstrap.png"
           },
           {
             "cid": 6,
             "cname": "React",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/react.png"
           },
           {
             "cid": 7,
             "cname": "Vuejs",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/vue.png"
           },
           {
             "cid": 8,
             "cname": "CSS",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/css.png"
           },
           {
             "cid": 9,
             "cname": "AngularJs",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/angularjs.png"
           }
         ]
       },
@@ -77,47 +77,47 @@
           {
             "cid": 10,
             "cname": "Python",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/python.png"
           },
           {
             "cid": 11,
             "cname": "PHP",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/php.png"
           },
           {
             "cid": 12,
             "cname": "Java",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/java.png"
           },
           {
             "cid": 13,
             "cname": "Ruby",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/ruby.png"
           },
           {
             "cid": 14,
             "cname": "Laravel",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/laravel.png"
           },
           {
             "cid": 15,
             "cname": "C",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/c.png"
           },
           {
             "cid": 16,
             "cname": "C++",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/c++.png"
           },
 		  {
             "cid": 17,
             "cname": "NodeJs",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/nodejs.png"
           },
           {
             "cid": 18,
             "cname": "GO",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/go.png"
           }
         ]
       },
@@ -128,32 +128,32 @@
 		  {
 			"cid": 19,
 			"cname": "Linux",
-			"thumb": "http://dummyimage.com/100x100"
+			"thumb": "/static/images/category/linux.png"
 		  },
           {
             "cid": 20,
             "cname": "Shell",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/shell.png"
           },
           {
             "cid": 21,
             "cname": "网络",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/network.png"
           },
           {
             "cid": 22,
             "cname": "Nginx",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/nginx.png"
           },
           {
             "cid": 23,
             "cname": "Asible",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/asible.png"
           },
           {
             "cid": 24,
             "cname": "Git",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/git.png"
           }
         ]
       },
@@ -164,32 +164,32 @@
           {
             "cid": 25,
             "cname": "SQL",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/sql.png"
           },
           {
             "cid": 26,
             "cname": "NoSQL",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/nosql.png"
           },
           {
             "cid": 27,
             "cname": "MongoDB",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/mongodb.png"
           },
           {
             "cid": 28,
             "cname": "MySql",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/mysql.png"
           },
           {
             "cid": 29,
             "cname": "Redis",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/redis.png"
           },
           {
             "cid": 30,
             "cname": "Oracle",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/oracle.png"
           }
         ]
       },
@@ -200,42 +200,42 @@
           {
             "cid": 31,
             "cname": "Hadoop",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/hadoop.png"
           },
           {
             "cid": 32,
             "cname": "Spark",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/spark.png"
           },
           {
             "cid": 33,
             "cname": "Scala",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/scala.png"
           },
           {
             "cid": 34,
             "cname": "Docker",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/docker.png"
           },
           {
             "cid": 35,
             "cname": "HBase",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/hbase.png"
           },
           {
             "cid": 36,
             "cname": "KafKa",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/kafka.png"
           },
           {
             "cid": 37,
             "cname": "Mahout",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/mahout.png"
           },
           {
             "cid": 38,
             "cname": "Hive",
-            "thumb": "http://dummyimage.com/100x100"
+            "thumb": "/static/images/category/hive.png"
           }
         ]
       }

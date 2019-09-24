@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+/*每个页面公共css */
+@font-face {
+  font-family: "iconfont";
+  src: url("data:application/x-font-woff2;charset=utf-8;base64,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") format("woff2");
+}
+.icon {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon.more:before {
+    content: "\E615";
+}
+.icon.categoryselected:before {
+    content: "\E60C";
+}
+.icon.ico-category:before {
+    content: "\E664";
+}
+.icon.cart:before {
+    content: "\E61D";
+}
+.icon.comment:before {
+    content: "\E603";
+}
+.icon.more1:before {
+    content: "\E61E";
+}
+.icon.attention:before {
+    content: "\E601";
+}
+.icon.more2:before {
+    content: "\E617";
+}
+.icon.more3:before {
+    content: "\E64B";
+}
+.icon.eye:before {
+    content: "\E6C6";
+}
+.icon.search:before {
+    content: "\E72F";
+}
+.icon.category:before {
+    content: "\E602";
+}
+

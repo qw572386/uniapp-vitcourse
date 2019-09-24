@@ -7,13 +7,24 @@
 			</view>
 			<view class="icon cart"></view>
 		</view>
-		<view class="carousel">
-			<view class="carousel-background" :style="{backgroundImage: `url(${currentCarousel.src})`}"></view>
-			<swiper circular :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" class="carousel-content" @change="changeSwiper">
-				<swiper-item v-for="item in carouselList" :key="item.id" @click.stop="goToDetail(item.id)"  class="carousel-content-item">
-					<image :src="item.src" class="image-item"></image>
-				</swiper-item>
-			</swiper>
+		<view class="swiper">
+			<view class="swiper-background" :style="{backgroundImage: `url(${currentCarousel.src})`}"></view>
+			<view class="swiper-box">
+				<swiper circular="true" autoplay="true" @change="changeSwiper" :interval="4000" :duration="1000" >
+					<swiper-item v-for="item in carouselList" :key="item.id" @click.stop="goToDetail(item.id)">
+						<image :src="item.src"></image>
+						<!-- <image :src="item.src" @tap="toSwiper(swiper)"></image> -->
+					</swiper-item>
+				</swiper>
+				<view class="indicator">
+					<view
+						class="dots"
+						v-for="(swiper, index) in carouselList"
+						:class="[currentSwiper >= index ? 'on' : '']"
+						:key="index"
+					></view>
+				</view>
+			</view>
 		</view>
 		<view class="floor-content hot-tag">
 			<floor-title title="热门标签" type="hotTags" />
@@ -59,6 +70,7 @@
 		},
 		data() {
 			return {
+				currentSwiper: 0,
 				carouselList: [
 					{
 						id: '10001',
@@ -146,6 +158,7 @@
 			},
 			changeSwiper(e) {
 				this.currentCarousel = this.carouselList[e.target.current]
+				this.currentSwiper = e.detail.current;
 			},
 			getCoursesByTag(tag) {
 				console.log(tag)

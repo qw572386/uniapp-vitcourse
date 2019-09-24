@@ -95,8 +95,8 @@
 }
 .content .carousel-content {
       position: relative;
-      left: 5%;
-      width: 90%;
+      left: 2%;
+      width: 96%;
       border-radius: 20rpx;
       overflow: hidden;
       height: 300rpx;
