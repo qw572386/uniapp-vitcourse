@@ -19,6 +19,9 @@ $uni-color-primary: #007aff;
 $uni-color-success: #4cd964;
 $uni-color-warning: #f0ad4e;
 $uni-color-error: #dd524d;
+$font-color-dark: #303133;
+$font-color-base: #606266;
+$font-color-light: #909399;
 
 /* 文字基本颜色 */
 $uni-text-color:#333;//基本色
@@ -35,7 +38,9 @@ $uni-bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
 
 /* 边框颜色 */
 $uni-border-color:#c8c7cc;
-
+$border-color-dark: #DCDFE6;
+$border-color-base: #E4E7ED;
+$border-color-light: #EBEEF5;
 /* 尺寸变量 */
 
 /* 文字尺寸 */
@@ -63,6 +68,12 @@ $uni-spacing-row-lg: 30upx;
 $uni-spacing-col-sm: 8upx;
 $uni-spacing-col-base: 16upx;
 $uni-spacing-col-lg: 24upx;
+
+/* 页面左右间距 */
+$page-row-spacing: 30upx;
+$page-color-base: #f8f8f8;
+$page-color-light: #f8f6fc;
+$base-color: #fa436a;
 
 /* 透明度 */
 $uni-opacity-disabled: 0.3; // 组件禁用态的透明度
