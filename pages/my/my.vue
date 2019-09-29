@@ -124,7 +124,7 @@
 			 */
 			navTo(url){
 				if(!this.hasLogin){
-					url = '/pages/public/login';
+					url = '/pages/login/login';
 				}
 				uni.navigateTo({  
 					url
