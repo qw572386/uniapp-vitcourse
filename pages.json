@@ -29,11 +29,15 @@
         }
         ,{
             "path" : "pages/login/login",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "登录"
+			}
         }
         ,{
             "path" : "pages/register/register",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "注册"
+			}
         }
     ],
 	"globalStyle": {
@@ -53,8 +57,8 @@
 		]
 	},
 	"tabBar": {
-		"color":"#999999",
-		"selectedColor": "#FA436A",
+		"color":"#909399",
+		"selectedColor": "#4ABCFC",
 		"list": [
 			{
 				"pagePath": "pages/index/index",

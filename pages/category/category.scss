@@ -32,7 +32,7 @@
 					&.onSelected {
 						background-color: #F7F7F7;
 						position: relative;
-						color: #FA4B70;
+						color: $font-color-select;
 
 						&::before {
 							content: '';
@@ -41,7 +41,7 @@
 							top: 0;
 							width: 10rpx;
 							height: 100%;
-							background: linear-gradient(124deg, #FA4E73 0%, #F9708E 100%);
+							background: linear-gradient(124deg, $color-start 0%, $color-end 100%);
 						}
 					}
 				}
