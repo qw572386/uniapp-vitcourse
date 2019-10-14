@@ -7,7 +7,7 @@
 			</view>
 			<view class="lesson-item-content-detail">
 				<view class="views count">
-					<view class="icon eye"></view>
+					<view class="icon md-eye"></view>
 					<text>{{lesson.view}}</text>
 				</view>
 				<view class="attentions count">

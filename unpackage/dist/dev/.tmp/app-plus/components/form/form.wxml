@@ -1,0 +1,1 @@
+<view class="container"><image class="logo" src="../../static/logo.png" mode="aspectFit"></image><view class="logo-title">有课</view><view class="form-box"><slot></slot></view></view>

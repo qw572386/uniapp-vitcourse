@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "vit-search": "/components/search"
+  }
+}

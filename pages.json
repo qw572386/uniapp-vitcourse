@@ -39,6 +39,14 @@
 				"navigationBarTitleText": "注册"
 			}
         }
+        ,{
+            "path" : "pages/search/search",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/searchlist/searchlist",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

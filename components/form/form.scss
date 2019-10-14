@@ -15,37 +15,6 @@
 	}
 	.form-box{
 		margin-top: 100upx;
-		/deep/ .input{
-			background: #e2f5fc;
-			margin-top: 30upx;
-			border-radius: 100upx;
-			padding: 20upx 40upx;
-			font-size: 36upx;
-		}
-		/deep/ .input-placeholder, input{
-			color: #94afce;
-		}
-		/deep/ .label{
-			padding: 40upx 0;
-			text-align: center;
-			font-size: 30upx;
-			color: #a7b6d0;
-		}
-		/deep/ .btn{
-			background: linear-gradient(124deg, $color-start 0%, $color-end 100%);
-			color: #fff;
-			border: 0;
-			border-radius: 100upx;
-			font-size: 36upx;
-			margin-top: 30upx;
-		}
-		/deep/ .btn:after{
-			border: 0;
-		}
-		/*按钮点击效果*/
-		/deep/ .btn.button-hover{
-			transform: translate(1upx, 1upx);
-		}
 	}
 }
 

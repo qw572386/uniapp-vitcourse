@@ -3,7 +3,11 @@
     "pages/index/index",
     "pages/category/category",
     "pages/my/my",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/search/search",
+    "pages/searchlist/searchlist"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -12,8 +16,8 @@
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
-    "color": "#999999",
-    "selectedColor": "#FA436A",
+    "color": "#909399",
+    "selectedColor": "#4ABCFC",
     "list": [
       {
         "pagePath": "pages/index/index",

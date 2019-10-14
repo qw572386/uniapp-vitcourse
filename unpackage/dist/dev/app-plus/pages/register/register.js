@@ -1,0 +1,2 @@
+setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"btn.",[1],"login { margin-top: ",[0,30],"; }\n",],undefined,{path:"./pages/register/register.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/register/register.wxml') } }));

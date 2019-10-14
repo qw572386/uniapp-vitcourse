@@ -22,6 +22,7 @@
 /* Border Radius */
 /* 水平间距 */
 /* 垂直间距 */
+/* 页面左右间距 */
 /* 透明度 */
 /* 文章场景相关 */
 .category .category-wrapper {
@@ -67,7 +68,7 @@
 .category .category-wrapper .left-wrapper .left-content .title-content.onSelected {
         background-color: #F7F7F7;
         position: relative;
-        color: #FA4B70;
+        color: #4ABCFC;
 }
 .category .category-wrapper .left-wrapper .left-content .title-content.onSelected::before {
           content: '';
@@ -76,8 +77,8 @@
           top: 0;
           width: 10rpx;
           height: 100%;
-          background: -o-linear-gradient(326deg, #FA4E73 0%, #F9708E 100%);
-          background: linear-gradient(124deg, #FA4E73 0%, #F9708E 100%);
+          background: -o-linear-gradient(326deg, #50E8FD 0%, #4481FB 100%);
+          background: linear-gradient(124deg, #50E8FD 0%, #4481FB 100%);
 }
 .category .category-wrapper .right-wrapper {
     -webkit-box-flex: 1;

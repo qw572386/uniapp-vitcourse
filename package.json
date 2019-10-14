@@ -1,0 +1,23 @@
+{
+  "name": "youke",
+  "version": "1.0.0",
+  "description": "使用uni-app开发的跨端课程视频项目",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qw572386/uniapp-vitcourse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qw572386/uniapp-vitcourse/issues"
+  },
+  "homepage": "https://github.com/qw572386/uniapp-vitcourse#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}

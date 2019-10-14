@@ -1,5 +1,5 @@
 <template>
-	<vit-form class="login-contaner">
+	<vit-form class="login-contaner vit-form-container">
 		<input class="input" placeholder-class placeholder="请输入用户名" />
 		<input class="input" placeholder-class password placeholder="请输入密码"/>
 		<view class="forget-password label">忘记密码？</view>
@@ -25,5 +25,6 @@
 	}
 </script>
 <style lang="scss">
+	@import '../../components/form/formsolt.scss';
 	@import './login.scss';
 </style>
