@@ -8,12 +8,11 @@
 			<view class="icon cart"></view>
 		</view>
 		<view class="swiper">
-			<view class="swiper-background" :style="{backgroundImage: `url(${currentCarousel.src})`}"></view>
+			<view class="swiper-background" :style="{backgroundImage: currentCarousel && currentCarousel.src ? `url(${ currentCarousel.src })` : ''}"></view>
 			<view class="swiper-box">
 				<swiper circular="true" autoplay="true" @change="changeSwiper" :interval="4000" :duration="1000" >
 					<swiper-item v-for="item in carouselList" :key="item.id" @click.stop="goToDetail(item.id)">
 						<image :src="item.src"></image>
-						<!-- <image :src="item.src" @tap="toSwiper(swiper)"></image> -->
 					</swiper-item>
 				</swiper>
 				<view class="indicator">
@@ -29,8 +28,8 @@
 		<view class="floor-content hot-tag">
 			<floor-title title="热门标签" type="hotTags" />
 			<scroll-view scroll-x="true" class="scroll-view-content tags-content">
-				<view class="tags-content-item" v-for="item in tagList" :key="item" @click.stop="getCoursesByTag(item)">
-					{{item}}
+				<view class="tags-content-item" v-for="item in tagList" :key="item._id" @click.stop="getCoursesByTag(item.name)">
+					{{item.name}}
 				</view>
 			</scroll-view>
 		</view>
@@ -72,81 +71,81 @@
 			return {
 				currentSwiper: 0,
 				carouselList: [
-					{
-						id: '10001',
-						src: '//img.mukewang.com/5d26efae0001f8fb18720632.jpg'
-					},
-					{
-						id: '10002',
-						src: '//img.mukewang.com/5cf63a960001340f18720632.jpg'
-					},
-					{
-						id: '10003',
-						src: '//img.mukewang.com/5d4164f40001e2e716000540.jpg'
-					},
-					{
-						id: '10004',
-						src: '//img.mukewang.com/5d5a6bbc00013ebf09360316.jpg'
-					},
-					{
-						id: '10005',
-						src: '//img.mukewang.com/5d5b59460001ea1d18720632.jpg'
-					},
+					// {
+					// 	id: '10001',
+					// 	src: '//img.mukewang.com/5d26efae0001f8fb18720632.jpg'
+					// },
+					// {
+					// 	id: '10002',
+					// 	src: '//img.mukewang.com/5cf63a960001340f18720632.jpg'
+					// },
+					// {
+					// 	id: '10003',
+					// 	src: '//img.mukewang.com/5d4164f40001e2e716000540.jpg'
+					// },
+					// {
+					// 	id: '10004',
+					// 	src: '//img.mukewang.com/5d5a6bbc00013ebf09360316.jpg'
+					// },
+					// {
+					// 	id: '10005',
+					// 	src: '//img.mukewang.com/5d5b59460001ea1d18720632.jpg'
+					// },
 				],
 				currentCarousel: {
-					id: '10001',
-					src: '//img.mukewang.com/5d26efae0001f8fb18720632.jpg'
+					// id: '10001',
+					// src: '//img.mukewang.com/5d26efae0001f8fb18720632.jpg'
 				},
-				tagList: ['vue', 'react', '前端', 'java', 'springBoot', 'MySQL', '大数据', '算法', 'web', 'PHP'],
+				tagList: [], // ['vue', 'react', '前端', 'java', 'springBoot', 'MySQL', '大数据', '算法', 'web', 'PHP'],
 				lessonList: [
-					{
-						id: '10001',
-						title: 'Java编程基础',
-						src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
-						view: 2000,
-						attention: 1000,
-						comment: 598
-					},
-					{
-						id: '10002',
-						title: 'Java编程基础',
-						src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
-						view: 2000,
-						attention: 1000,
-						comment: 598
-					},
-					{
-						id: '10003',
-						title: 'Java编程基础',
-						src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
-						view: 2000,
-						attention: 1000,
-						comment: 598
-					},
-					{
-						id: '10004',
-						title: 'Java编程基础',
-						src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
-						view: 2000,
-						attention: 1000,
-						comment: 598
-					},
-					{
-						id: '10005',
-						title: 'Java编程基础',
-						src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
-						view: 2000,
-						attention: 1000,
-						comment: 598
-					},
-					{
-						id: '10006',
-						title: 'Java编程基础dsfsdfdsfgsdgf',
-						src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
-						view: 2000,
-						attention: 1000,
-						comment: 598
-					}
+					// {
+					// 	id: '10001',
+					// 	title: 'Java编程基础',
+					// 	src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
+					// 	view: 2000,
+					// 	attention: 1000,
+					// 	comment: 598
+					// },
+					// {
+					// 	id: '10002',
+					// 	title: 'Java编程基础',
+					// 	src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
+					// 	view: 2000,
+					// 	attention: 1000,
+					// 	comment: 598
+					// },
+					// {
+					// 	id: '10003',
+					// 	title: 'Java编程基础',
+					// 	src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
+					// 	view: 2000,
+					// 	attention: 1000,
+					// 	comment: 598
+					// },
+					// {
+					// 	id: '10004',
+					// 	title: 'Java编程基础',
+					// 	src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
+					// 	view: 2000,
+					// 	attention: 1000,
+					// 	comment: 598
+					// },
+					// {
+					// 	id: '10005',
+					// 	title: 'Java编程基础',
+					// 	src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
+					// 	view: 2000,
+					// 	attention: 1000,
+					// 	comment: 598
+					// },
+					// {
+					// 	id: '10006',
+					// 	title: 'Java编程基础dsfsdfdsfgsdgf',
+					// 	src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
+					// 	view: 2000,
+					// 	attention: 1000,
+					// 	comment: 598
+					// }
 				]
 			}
 		},
@@ -170,9 +169,15 @@
 			}
 		},
 		onLoad() {
-			this.$get('/carousel').then(res => {
-				this.carouselList = res.data.data;
-				this.currentCarousel = res.data.data[0]
+			const that = this;
+			that.$get('/carousel').then(res => {
+				that.carouselList = res.data.data;
+				that.currentCarousel = res.data.data[0]
+			}).catch(err => {
+				
+			})
+			that.$get('/tags').then(res => {
+				that.tagList = res.data.data;
 			}).catch(err => {
 				
 			})

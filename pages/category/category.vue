@@ -24,9 +24,9 @@
 						<view class="category-item" :id="'list'+c_index" v-for="(c_item,c_index) in catrgoryList" :key="c_item.id">
 							<view class="category-title">{{c_item.name}}</view>
 							<view class="category-content">
-								<view class="product-item" v-for="(p_item,p_index) in c_item.content" :key="p_item.id">
-									<image class="product-img" :src="p_item.thumb"></image>
-									<text class="product-title">{{p_item.cname}}</text>
+								<view class="product-item" v-for="(p_item,p_index) in c_item.children" :key="p_item.id">
+									<image class="product-img" :src="p_item.src"></image>
+									<text class="product-title">{{p_item.name}}</text>
 								</view>
 							</view>
 						</view>
@@ -58,24 +58,28 @@
 		},
 		methods: {
 			init() {
-				// uni.request({
-				// 	url: 'https://www.easy-mock.com/mock/5d351e87b5e1f213739d6498/shop/categoryList', //仅为示例，并非真实接口地址。
-				// 	method: 'GET',
-				// 	success: (res) => {
-				// 		if (res.data.error === 0) {
-				// 			this.catrgoryList = res.data.data.list;
-				// 			this.swiperList = res.data.data.banner;
-				// 			this.$nextTick(() => {
-				// 				this.getHeightList();
-				// 			})
-				// 		}
-				// 	}
-				// });
-				const { data: { list, banner } } = require('../../data/categoryList.json');
-				this.catrgoryList = list;
-				this.swiperList = banner;
-				this.$nextTick(() => {
-					this.getHeightList();
+				const that = this;
+				that.$get('/category').then(res => {
+					that.catrgoryList = res.data.data;
+					that.swiperList = [
+						{
+							"Imgid": 10,
+							"src": "http://dummyimage.com/530x180"
+						},
+						{
+							"Imgid": 11,
+							"src": "http://dummyimage.com/530x180"
+						},
+						{
+							"Imgid": 12,
+							"src": "http://dummyimage.com/530x180"
+						}
+					];
+					that.$nextTick(() => {
+						that.getHeightList();
+					})
+				}).catch(err => {
+					
 				})
 			},
 			getHeightList() {

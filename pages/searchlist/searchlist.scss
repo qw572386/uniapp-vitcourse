@@ -1,0 +1,13 @@
+.search-container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 20upx;
+	box-sizing: border-box;
+	.no-result{
+		color: $font-color-base;
+		font-size: $uni-font-size-base;
+		text-align: center;
+		width: 100%;
+	}
+}

@@ -41,11 +41,15 @@
         }
         ,{
             "path" : "pages/search/search",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "搜索"
+			}
         }
         ,{
             "path" : "pages/searchlist/searchlist",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "搜索结果"
+			}
         }
     ],
 	"globalStyle": {
