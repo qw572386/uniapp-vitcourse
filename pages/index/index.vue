@@ -37,21 +37,21 @@
 			<floor-title title="精选好课" type="goodLessons" />
 			<scroll-view scroll-x="true" class="scroll-view-content">
 				<view class="good-lessons-content">
-					<lesson-item v-for="lesson in lessonList" :key="lesson.id" :lesson="lesson" @goToDetail="goToDetail(lesson.id)" />
+					<lesson-item v-for="lesson in goodLessons" :key="lesson._id" :lesson="lesson" @goToDetail="goToDetail" />
 				</view>
 			</scroll-view>
 		</view>
 		<view class="floor-content new-lessons">
 			<floor-title title="近期上新" type="newLessons" />
 			<view class="new-lessons-content">
-				<lesson-item v-for="lesson in lessonList" :key="lesson.id" :lesson="lesson" @goToDetail="goToDetail(lesson.id)" />
+				<lesson-item v-for="lesson in newLessons" :key="lesson._id" :lesson="lesson" @goToDetail="goToDetail" />
 			</view>
 		</view>
 		<view class="floor-content basic-lessons">
 			<floor-title title="新手入门" type="basicLessons" />
 			<scroll-view scroll-x="true" class="scroll-view-content">
 				<view class="basic-lessons-content">
-					<lesson-item v-for="lesson in lessonList" :key="lesson.id" :lesson="lesson" @goToDetail="goToDetail(lesson.id)" />
+					<lesson-item v-for="lesson in basicLessons" :key="lesson._id" :lesson="lesson" @goToDetail="goToDetail" />
 				</view>
 			</scroll-view>
 		</view>
@@ -71,82 +71,13 @@
 			return {
 				currentSwiper: 0,
 				carouselList: [
-					// {
-					// 	id: '10001',
-					// 	src: '//img.mukewang.com/5d26efae0001f8fb18720632.jpg'
-					// },
-					// {
-					// 	id: '10002',
-					// 	src: '//img.mukewang.com/5cf63a960001340f18720632.jpg'
-					// },
-					// {
-					// 	id: '10003',
-					// 	src: '//img.mukewang.com/5d4164f40001e2e716000540.jpg'
-					// },
-					// {
-					// 	id: '10004',
-					// 	src: '//img.mukewang.com/5d5a6bbc00013ebf09360316.jpg'
-					// },
-					// {
-					// 	id: '10005',
-					// 	src: '//img.mukewang.com/5d5b59460001ea1d18720632.jpg'
-					// },
 				],
 				currentCarousel: {
-					// id: '10001',
-					// src: '//img.mukewang.com/5d26efae0001f8fb18720632.jpg'
 				},
-				tagList: [], // ['vue', 'react', '前端', 'java', 'springBoot', 'MySQL', '大数据', '算法', 'web', 'PHP'],
-				lessonList: [
-					// {
-					// 	id: '10001',
-					// 	title: 'Java编程基础',
-					// 	src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
-					// 	view: 2000,
-					// 	attention: 1000,
-					// 	comment: 598
-					// },
-					// {
-					// 	id: '10002',
-					// 	title: 'Java编程基础',
-					// 	src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
-					// 	view: 2000,
-					// 	attention: 1000,
-					// 	comment: 598
-					// },
-					// {
-					// 	id: '10003',
-					// 	title: 'Java编程基础',
-					// 	src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
-					// 	view: 2000,
-					// 	attention: 1000,
-					// 	comment: 598
-					// },
-					// {
-					// 	id: '10004',
-					// 	title: 'Java编程基础',
-					// 	src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
-					// 	view: 2000,
-					// 	attention: 1000,
-					// 	comment: 598
-					// },
-					// {
-					// 	id: '10005',
-					// 	title: 'Java编程基础',
-					// 	src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
-					// 	view: 2000,
-					// 	attention: 1000,
-					// 	comment: 598
-					// },
-					// {
-					// 	id: '10006',
-					// 	title: 'Java编程基础dsfsdfdsfgsdgf',
-					// 	src: 'https://img.mukewang.com/5d26efae0001f8fb18720632.jpg',
-					// 	view: 2000,
-					// 	attention: 1000,
-					// 	comment: 598
-					// }
-				]
+				tagList: [],
+				goodLessons: [],
+				newLessons: [],
+				basicLessons: []
 			}
 		},
 		methods: {
@@ -175,9 +106,36 @@
 				that.currentCarousel = res.data.data[0]
 			}).catch(err => {
 				
-			})
+			});
 			that.$get('/tags').then(res => {
 				that.tagList = res.data.data;
+			}).catch(err => {
+				
+			});
+			that.$post('/lesson', {
+				type: '精选好课',
+				pageNo: 1,
+				pageSize: 6
+			}).then(res => {
+				that.goodLessons = res.data.data;
+			}).catch(err => {
+				
+			})
+			that.$post('/lesson', {
+				type: '近期上新',
+				pageNo: 1,
+				pageSize: 6
+			}).then(res => {
+				that.newLessons = res.data.data;
+			}).catch(err => {
+				
+			})
+			that.$post('/lesson', {
+				type: '新手入门',
+				pageNo: 1,
+				pageSize: 6
+			}).then(res => {
+				that.basicLessons = res.data.data;
 			}).catch(err => {
 				
 			})

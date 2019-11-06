@@ -1,6 +1,6 @@
 <template>
 	<view class="lesson-item" @click="handleLesson">
-		<image :src="lesson.src" mode="" class="lesson-item-img"></image>
+		<image :src="lesson.img" mode="" class="lesson-item-img"></image>
 		<view class="lesson-item-content">
 			<view class="lesson-item-content-title">
 				{{lesson.title}}
@@ -16,7 +16,7 @@
 				</view>
 				<view class="comments count">
 					<view class="icon comment"></view>
-					<text>{{lesson.comment}}</text>
+					<text>{{lesson.comment.length}}</text>
 				</view>
 			</view>
 		</view>
@@ -33,7 +33,7 @@
 		},
 		methods: {
 			handleLesson() {
-				this.$emit('goToDetail', this.lesson.id)
+				this.$emit('goToDetail', this.lesson._id)
 			}
 		}
 	}
@@ -71,6 +71,7 @@
 			overflow: hidden;
 			white-space: nowrap;
 			text-overflow: ellipsis;
+			font-size: $uni-font-size-base;
 		}
 		&-detail{
 			display: flex;
